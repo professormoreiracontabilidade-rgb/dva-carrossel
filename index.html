@@ -1,0 +1,605 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#a94709" />
+<meta name="description" content="DVA em 40 quadrinhos didáticos: carrossel mobile do Curso de Contabilidade Professor Moreira." />
+<title>DVA | 40 Quadrinhos — Professor Moreira</title>
+<style>
+:root{color-scheme:light; font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; --brown:#7b3107;--orange:#a94709;--cream:#fff8ed;--w:570px}
+*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:linear-gradient(140deg,#fff7ed,#ffe8cf);color:#241407;min-height:100vh;min-height:100svh} button,select{font:inherit}
+.page{max-width:830px; padding:12px 12px 28px;margin:auto}.brand{display:flex;align-items:center;justify-content:space-between;gap:12px;max-width:var(--w);margin:0 auto 12px}.brand h1{margin:0;font-size:clamp(19px,4.2vw,25px);letter-spacing:-.7px;color:var(--brown);line-height:1.06}.brand small{display:block;font-weight:800;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#a35e2d;margin-bottom:4px}.chapter{font-size:12px;font-weight:900;background:#fff1db;border:2px solid #eeb57f;color:var(--brown);padding:7px 10px;border-radius:999px;white-space:nowrap}
+.frame{position:relative;max-width:var(--w);margin:0 auto}.track{display:flex;align-items:stretch;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scrollbar-width:none;border-radius:25px;box-shadow:0 12px 40px #8f3a1526;outline:0}.track::-webkit-scrollbar{display:none}.slide{position:relative;isolation:isolate;overflow:hidden;flex:0 0 100%;width:100%;height:min(74svh,720px);min-height:490px;scroll-snap-align:center;scroll-snap-stop:always;color:var(--ink);background:var(--bg)}
+.slide.theme-amber{--bg:#fff4df;--ink:#a94709;--accent:#f6aa2b}.slide.theme-teal{--bg:#e8f7f5;--ink:#006c62;--accent:#38a79c}.slide.theme-violet{--bg:#f1edff;--ink:#5737a5;--accent:#9272ed}.slide.theme-navy{--bg:#eaf2ff;--ink:#163d81;--accent:#648be3}
+.slide-inner{position:relative;z-index:2;display:flex;flex-direction:column;height:100%;overflow-y:auto;overscroll-behavior-y:contain;padding:clamp(20px,5.2vw,34px);scrollbar-width:thin}.toprow{display:flex;justify-content:space-between;align-items:center;gap:8px}.unit{font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.45px;border-radius:99px;padding:8px 11px;background:#ffffffb8;border:1px solid currentColor}.num{font-weight:950;font-size:15px;white-space:nowrap}.slide-main{margin:auto 0;display:flex;flex-direction:column;gap:clamp(12px,2.5vh,23px);padding:10px 0}.eye{font-size:13px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;opacity:.78}.slide h2{font-size:clamp(31px,7.2vw,49px);line-height:1.08;margin:0;letter-spacing:-1.5px;overflow-wrap:break-word}.explanation{font-weight:650;font-size:clamp(20px,4.5vw,25px);line-height:1.28;color:#342a24;margin:0}.formula{padding:clamp(14px,4vw,22px);border-radius:18px;border-left:8px solid var(--ink);background:#fffefada;color:var(--ink);font-size:clamp(18px,4.3vw,26px);line-height:1.17;font-weight:950;letter-spacing:-.35px;box-shadow:0 7px 15px #0000000c;overflow-wrap:break-word}.note{border-top:1px solid #817b7440;padding-top:15px;font-size:clamp(17px,3.8vw,20px);font-weight:750;line-height:1.32;margin:0;color:#3d342b}.spark{font-size:22px;color:var(--ink)}.signature{border-top:2px solid currentColor;padding-top:12px;font-weight:850;line-height:1.15;letter-spacing:.08em;font-size:10px;opacity:.8}.signature strong{display:block;font-size:14px;letter-spacing:.05em}.art{position:absolute;inset:0;pointer-events:none}.bubble{position:absolute;border-radius:50%;opacity:.16;background:var(--accent)}.bubble.one{width:260px;height:260px;right:-100px;top:-80px}.bubble.two{width:170px;height:170px;left:-120px;bottom:10%}.bubble.three{width:100px;height:100px;right:-50px;bottom:0}
+.controls{max-width:var(--w);margin:14px auto 0}.progress{height:9px;overflow:hidden;border-radius:99px;background:#dcbda6;box-shadow:inset 0 1px 4px #0002}.progress-fill{width:2.5%;height:100%;transition:width .25s;background:linear-gradient(90deg,#c46216,#f3ab37)}.controlrow{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:13px}.nav{background:#87380f;color:white;border:0;border-radius:14px;padding:11px 17px;font-size:19px;font-weight:950;cursor:pointer;min-height:48px;box-shadow:0 4px 10px #6d2d1230}.nav:focus-visible,.jump:focus-visible,.restart:focus-visible,.track:focus-visible{outline:3px solid #086fff;outline-offset:3px}.nav:disabled{opacity:.3;cursor:default}.pagecounter{text-align:center;font-weight:900;color:var(--brown);white-space:nowrap}.hint{text-align:center;color:#854c2b;font-weight:730;font-size:13px;margin:11px auto 14px;max-width:var(--w)}.bottomrow{max-width:var(--w);display:flex;gap:8px;margin:auto;flex-wrap:wrap}.jump,.restart{padding:10px 12px;border:1px solid #c98c55;background:#fffaf4;color:#763208;border-radius:12px;font-size:14px;font-weight:850}.jump{flex:1;min-width:190px}.restart{cursor:pointer}.source{max-width:var(--w);margin:18px auto 0;color:#75502d;font-size:12px;line-height:1.5;text-align:center}.source a{color:#763208;text-underline-offset:3px}
+@media(min-width:620px){.page{padding-top:18px}.slide{height:min(73svh,720px);min-height:540px}.slide-inner{padding:34px 39px}}
+@media(max-height:660px){.slide{height:75svh;min-height:430px}.slide-main{gap:10px}.slide h2{font-size:clamp(27px,6.5vw,41px)}.explanation{font-size:clamp(18px,4vw,22px)}.formula{font-size:clamp(17px,4vw,22px)}.note{font-size:16px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.progress-fill{transition:none}}
+</style>
+</head>
+<body><main class="page">
+<header class="brand"><div><small>Curso de Contabilidade</small><h1>Professor Moreira<br>DVA em 40 quadrinhos</h1></div><span class="chapter">TEORIA COMPLETA</span></header>
+<div class="frame"><div id="track" class="track" role="region" tabindex="0" aria-roledescription="carrossel" aria-label="Carrossel didático da Demonstração do Valor Adicionado">
+<article class="slide theme-amber" aria-label="Quadrinho 1 de 40: DVA — Demonstração do Valor Adicionado" data-section="Fundamentos" id="quadro-1">
+  <div class="art" aria-hidden="true"><span class="bubble one"></span><span class="bubble two"></span><span class="bubble three"></span></div>
+  <div class="slide-inner">
+    <div class="toprow"><span class="unit">Fundamentos</span><span class="num">01 / 40</span></div>
+    <div class="slide-main">
+      <div class="eye">DVA • CPC 09 (R1)</div>
+      <h2>DVA — Demonstração do Valor Adicionado</h2>
+      <p class="explanation">A riqueza gerada pela empresa e como ela é distribuída.</p>
+      <div class="formula">40 quadrinhos para aprender deslizando o dedo.</div>
+      <p class="note"><span class="spark">✦</span> CURSO DE CONTABILIDADE PROFESSOR MOREIRA</p>
+    </div>
+    <div class="signature">CURSO DE CONTABILIDADE <strong>PROFESSOR MOREIRA</strong></div>
+  </div>
+</article>
+<article class="slide theme-amber" aria-label="Quadrinho 2 de 40: O que é a DVA?" data-section="Fundamentos" id="quadro-2">
+  <div class="art" aria-hidden="true"><span class="bubble one"></span><span class="bubble two"></span><span class="bubble three"></span></div>
+  <div class="slide-inner">
+    <div class="toprow"><span class="unit">Fundamentos</span><span class="num">02 / 40</span></div>
+    <div class="slide-main">
+      <div class="eye">DVA • CPC 09 (R1)</div>
+      <h2>O que é a DVA?</h2>
+      <p class="explanation">É a demonstração que evidencia a riqueza criada pela entidade em determinado período e como essa riqueza foi distribuída.</p>
+      <div class="formula">GERAÇÃO + DISTRIBUIÇÃO</div>
+      <p class="note"><span class="spark">✦</span> A DVA tem natureza econômico-social.</p>
+    </div>
+    <div class="signature">CURSO DE CONTABILIDADE <strong>PROFESSOR MOREIRA</strong></div>
+  </div>
+</article>
+<article class="slide theme-amber" aria-label="Quadrinho 3 de 40: Duas perguntas essenciais" data-section="Fundamentos" id="quadro-3">
+  <div class="art" aria-hidden="true"><span class="bubble one"></span><span class="bubble two"></span><span class="bubble three"></span></div>
+  <div class="slide-inner">
+    <div class="toprow"><span class="unit">Fundamentos</span><span class="num">03 / 40</span></div>
+    <div class="slide-main">
+      <div class="eye">DVA • CPC 09 (R1)</div>
+      <h2>Duas perguntas essenciais</h2>
+      <p class="explanation">A primeira parte mostra como a riqueza é formada. A segunda mostra quem recebeu essa riqueza.</p>
+      <div class="formula">QUANTO CRIOU? → PARA QUEM FOI?</div>
+      <p class="note"><span class="spark">✦</span> Não se limita a indicar o lucro.</p>
+    </div>
+    <div class="signature">CURSO DE CONTABILIDADE <strong>PROFESSOR MOREIRA</strong></div>
+  </div>
+</article>
+<article class="slide theme-amber" aria-label="Quadrinho 4 de 40: DVA não é DRE" data-section="Fundamentos" id="quadro-4">
+  <div class="art" aria-hidden="true"><span class="bubble one"></span><span class="bubble two"></span><span class="bubble three"></span></div>
+  <div class="slide-inner">
+    <div class="toprow"><span class="unit">Fundamentos</span><span class="num">04 / 40</span></div>
+    <div class="slide-main">
+      <div class="eye">DVA • CPC 09 (R1)</div>
+      <h2>DVA não é DRE</h2>
+      <p class="explanation">A DRE apura o resultado do período. A DVA evidencia o valor adicionado e sua distribuição entre os agentes econômicos.</p>
+      <div class="formula">DRE ≠ DVA</div>
+      <p class="note"><span class="spark">✦</span> A DVA utiliza principalmente dados da DRE.</p>
+    </div>
+    <div class="signature">CURSO DE CONTABILIDADE <strong>PROFESSOR MOREIRA</strong></div>
+  </div>
+</article>
+<article class="slide theme-amber" aria-label="Quadrinho 5 de 40: Quem deve apresentar?" data-section="Fundamentos" id="quadro-5">
+  <div class="art" aria-hidden="true"><span class="bubble one"></span><span class="bubble two"></span><span class="bubble three"></span></div>
+  <div class="slide-inner">
+    <div class="toprow"><span class="unit">Fundamentos</span><span class="num">05 / 40</span></div>
+    <div class="slide-main">
+      <div class="eye">DVA • CPC 09 (R1)</div>
+      <h2>Quem deve apresentar?</h2>
+      <p class="explanation">A Lei das S.A. exige DVA para companhias abertas. Outras entidades podem apresentá-la por exigência específica ou voluntariamente.</p>
+      <div class="formula">LEI 6.404/1976, ART. 176, V</div>
+      <p class="note"><span class="spark">✦</span> Na prova, associe a obrigação legal às companhias abertas.</p>
+    </div>
+    <div class="signature">CURSO DE CONTABILIDADE <strong>PROFESSOR MOREIRA</strong></div>
+  </div>
+</article>
+<article class="slide theme-amber" aria-label="Quadrinho 6 de 40: Norma de referência" data-section="Fundamentos" id="quadro-6">
+  <div class="art" aria-hidden="true"><span class="bubble one"></span><span class="bubble two"></span><span class="bubble three"></span></div>
+  <div class="slide-inner">
+    <div class="toprow"><span class="unit">Fundamentos</span><span class="num">06 / 40</span></div>
+    <div class="slide-main">
+      <div class="eye">DVA • CPC 09 (R1)</div>
+      <h2>Norma de referência</h2>
+      <p class="explanation">O CPC 09 (R1) disciplina a elaboração e a apresentação da Demonstração do Valor Adicionado.</p>
+      <div class="formula">CPC 09 (R1) / NBC TG 09 (R1)</div>
+      <p class="note"><span class="spark">✦</span> O CPC 09 (R1) foi divulgado em 2024.</p>
+    </div>
+    <div class="signature">CURSO DE CONTABILIDADE <strong>PROFESSOR MOREIRA</strong></div>
+  </div>
+</article>
+<article class="slide theme-amber" aria-label="Quadrinho 7 de 40: As duas grandes partes" data-section="Fundamentos" id="quadro-7">
+  <div class="art" aria-hidden="true"><span class="bubble one"></span><span class="bubble two"></span><span class="bubble three"></span></div>
+  <div class="slide-inner">
+    <div class="toprow"><span class="unit">Fundamentos</span><span class="num">07 / 40</span></div>
+    <div class="slide-main">
+      <div class="eye">DVA • CPC 09 (R1)</div>
+      <h2>As duas grandes partes</h2>
+      <p class="explanation">A DVA começa com a formação da riqueza e termina detalhando sua distribuição.</p>
+      <div class="formula">1. FORMAÇÃO → 2. DISTRIBUIÇÃO</div>
+      <p class="note"><span class="spark">✦</span> Toda riqueza total a distribuir deve ter destino evidenciado.</p>
+    </div>
+    <div class="signature">CURSO DE CONTABILIDADE <strong>PROFESSOR MOREIRA</strong></div>
+  </div>
+</article>
+<article class="slide theme-amber" aria-label="Quadrinho 8 de 40: Mapa da formação" data-section="Fundamentos" id="quadro-8">
+  <div class="art" aria-hidden="true"><span class="bubble one"></span><span class="bubble two"></span><span class="bubble three"></span></div>
+  <div class="slide-inner">
+    <div class="toprow"><span class="unit">Fundamentos</span><span class="num">08 / 40</span></div>
+    <div class="slide-main">
+      <div class="eye">DVA • CPC 09 (R1)</div>
+      <h2>Mapa da formação</h2>
+      <p class="explanation">Receitas menos insumos de terceiros geram valor adicionado bruto. Depois, descontam-se depreciação, amortização e exaustão e somam-se transferências.</p>
+      <div class="formula">RECEITAS − INSUMOS − RETENÇÕES + TRANSFERÊNCIAS</div>
+      <p class="note"><span class="spark">✦</span> Este é o caminho fundamental dos cálculos.</p>
+    </div>
+    <div class="signature">CURSO DE CONTABILIDADE <strong>PROFESSOR MOREIRA</strong></div>
+  </div>
+</article>
+<article class="slide theme-amber" aria-label="Quadrinho 9 de 40: O que é valor adicionado?" data-section="Fundamentos" id="quadro-9">
+  <div class="art" aria-hidden="true"><span class="bubble one"></span><span class="bubble two"></span><span class="bubble three"></span></div>
+  <div class="slide-inner">
+    <div class="toprow"><span class="unit">Fundamentos</span><span class="num">09 / 40</span></div>
+    <div class="slide-main">
+      <div class="eye">DVA • CPC 09 (R1)</div>
+      <h2>O que é valor adicionado?</h2>
+      <p class="explanation">É a riqueza que a entidade agrega aos bens e serviços adquiridos de terceiros.</p>
+      <div class="formula">VALOR DAS VENDAS − INSUMOS DE TERCEIROS</div>
+      <p class="note"><span class="spark">✦</span> A riqueza recebida em transferência é acrescentada à parte.</p>
+    </div>
+    <div class="signature">CURSO DE CONTABILIDADE <strong>PROFESSOR MOREIRA</strong></div>
+  </div>
+</article>
+<article class="slide theme-amber" aria-label="Quadrinho 10 de 40: Exemplo intuitivo" data-section="Fundamentos" id="quadro-10">
+  <div class="art" aria-hidden="true"><span class="bubble one"></span><span class="bubble two"></span><span class="bubble three"></span></div>
+  <div class="slide-inner">
+    <div class="toprow"><span class="unit">Fundamentos</span><span class="num">10 / 40</span></div>
+    <div class="slide-main">
+      <div class="eye">DVA • CPC 09 (R1)</div>
+      <h2>Exemplo intuitivo</h2>
+      <p class="explanation">Uma empresa vendeu R$ 1.000 e utilizou R$ 600 de insumos adquiridos de terceiros.</p>
+      <div class="formula">R$ 1.000 − R$ 600 = R$ 400</div>
+      <p class="note"><span class="spark">✦</span> Valor adicionado bruto simplificado: R$ 400.</p>
+    </div>
+    <div class="signature">CURSO DE CONTABILIDADE <strong>PROFESSOR MOREIRA</strong></div>
+  </div>
+</article>
+<article class="slide theme-teal" aria-label="Quadrinho 11 de 40: Primeiro grupo: receitas" data-section="Receitas e insumos" id="quadro-11">
+  <div class="art" aria-hidden="true"><span class="bubble one"></span><span class="bubble two"></span><span class="bubble three"></span></div>
+  <div class="slide-inner">
+    <div class="toprow"><span class="unit">Receitas e insumos</span><span class="num">11 / 40</span></div>
+    <div class="slide-main">
+      <div class="eye">DVA • CPC 09 (R1)</div>
+      <h2>Primeiro grupo: receitas</h2>
+      <p class="explanation">No Modelo I da DVA, a formação começa com as receitas de contrato com cliente, outras receitas e demais rubricas previstas.</p>
+      <div class="formula">ITEM 1 — RECEITAS</div>
+      <p class="note"><span class="spark">✦</span> A receita para a DVA não é necessariamente a mesma receita líquida da DRE.</p>
+    </div>
+    <div class="signature">CURSO DE CONTABILIDADE <strong>PROFESSOR MOREIRA</strong></div>
+  </div>
+</article>
+<article class="slide theme-teal" aria-label="Quadrinho 12 de 40: Receita com tributos" data-section="Receitas e insumos" id="quadro-12">
+  <div class="art" aria-hidden="true"><span class="bubble one"></span><span class="bubble two"></span><span class="bubble three"></span></div>
+  <div class="slide-inner">
+    <div class="toprow"><span class="unit">Receitas e insumos</span><span class="num">12 / 40</span></div>
+    <div class="slide-main">
+      <div class="eye">DVA • CPC 09 (R1)</div>
+      <h2>Receita com tributos</h2>
+      <p class="explanation">A receita de contrato com cliente inclui os tributos incidentes sobre ela, como ICMS, IPI, PIS e COFINS, nos termos da norma.</p>
+      <div class="formula">RECEITA BRUTA, INCLUINDO TRIBUTOS</div>
+      <p class="note"><span class="spark">✦</span> Pegadinha frequente: não usar automaticamente a receita líquida.</p>
+    </div>
+    <div class="signature">CURSO DE CONTABILIDADE <strong>PROFESSOR MOREIRA</strong></div>
+  </div>
+</article>
+<article class="slide theme-teal" aria-label="Quadrinho 13 de 40: Outras receitas" data-section="Receitas e insumos" id="quadro-13">
+  <div class="art" aria-hidden="true"><span class="bubble one"></span><span class="bubble two"></span><span class="bubble three"></span></div>
+  <div class="slide-inner">
+    <div class="toprow"><span class="unit">Receitas e insumos</span><span class="num">13 / 40</span></div>
+    <div class="slide-main">
+      <div class="eye">DVA • CPC 09 (R1)</div>
+      <h2>Outras receitas</h2>
+      <p class="explanation">Incluem outras receitas enquadradas no CPC 09 (R1), como determinadas alienações de ativos e ajustes de mensuração reconhecidos no resultado.</p>
+      <div class="formula">OUTRAS RECEITAS PODEM TER SINAL NEGATIVO</div>
+      <p class="note"><span class="spark">✦</span> Observe a natureza e o tratamento específico de cada operação.</p>
+    </div>
+    <div class="signature">CURSO DE CONTABILIDADE <strong>PROFESSOR MOREIRA</strong></div>
+  </div>
+</article>
+<article class="slide theme-teal" aria-label="Quadrinho 14 de 40: Construção de ativo próprio" data-section="Receitas e insumos" id="quadro-14">
+  <div class="art" aria-hidden="true"><span class="bubble one"></span><span class="bubble two"></span><span class="bubble three"></span></div>
+  <div class="slide-inner">
+    <div class="toprow"><span class="unit">Receitas e insumos</span><span class="num">14 / 40</span></div>
+    <div class="slide-main">
+      <div class="eye">DVA • CPC 09 (R1)</div>
+      <h2>Construção de ativo próprio</h2>
+      <p class="explanation">Quando a empresa constrói um ativo para seu próprio uso, o valor contábil integral da construção é considerado na DVA como receita relativa à construção de ativos próprios.</p>
+      <div class="formula">ATIVO CONSTRUÍDO INTERNAMENTE → RECEITA NA DVA</div>
+      <p class="note"><span class="spark">✦</span> Seus componentes são classificados de acordo com sua natureza.</p>
+    </div>
+    <div class="signature">CURSO DE CONTABILIDADE <strong>PROFESSOR MOREIRA</strong></div>
+  </div>
+</article>
+<article class="slide theme-teal" aria-label="Quadrinho 15 de 40: Perdas com créditos" data-section="Receitas e insumos" id="quadro-15">
+  <div class="art" aria-hidden="true"><span class="bubble one"></span><span class="bubble two"></span><span class="bubble three"></span></div>
+  <div class="slide-inner">
+    <div class="toprow"><span class="unit">Receitas e insumos</span><span class="num">15 / 40</span></div>
+    <div class="slide-main">
+      <div class="eye">DVA • CPC 09 (R1)</div>
+      <h2>Perdas com créditos</h2>
+      <p class="explanation">Na formação da riqueza, constam as perdas estimadas com créditos de liquidação duvidosa: constituição e reversão.</p>
+      <div class="formula">CONSTITUIÇÃO (−) / REVERSÃO (+)</div>
+      <p class="note"><span class="spark">✦</span> Leia o sinal indicado na questão.</p>
+    </div>
+    <div class="signature">CURSO DE CONTABILIDADE <strong>PROFESSOR MOREIRA</strong></div>
+  </div>
+</article>
+<article class="slide theme-teal" aria-label="Quadrinho 16 de 40: O que são insumos?" data-section="Receitas e insumos" id="quadro-16">
+  <div class="art" aria-hidden="true"><span class="bubble one"></span><span class="bubble two"></span><span class="bubble three"></span></div>
+  <div class="slide-inner">
+    <div class="toprow"><span class="unit">Receitas e insumos</span><span class="num">16 / 40</span></div>
+    <div class="slide-main">
+      <div class="eye">DVA • CPC 09 (R1)</div>
+      <h2>O que são insumos?</h2>
+      <p class="explanation">São bens e serviços adquiridos de terceiros que se tornam custos ou despesas do período.</p>
+      <div class="formula">ITEM 2 — INSUMOS ADQUIRIDOS DE TERCEIROS</div>
+      <p class="note"><span class="spark">✦</span> Insumos que ainda estão em estoque não entram nessa parcela.</p>
+    </div>
+    <div class="signature">CURSO DE CONTABILIDADE <strong>PROFESSOR MOREIRA</strong></div>
+  </div>
+</article>
+<article class="slide theme-teal" aria-label="Quadrinho 17 de 40: CMV, CPV e CSV" data-section="Receitas e insumos" id="quadro-17">
+  <div class="art" aria-hidden="true"><span class="bubble one"></span><span class="bubble two"></span><span class="bubble three"></span></div>
+  <div class="slide-inner">
+    <div class="toprow"><span class="unit">Receitas e insumos</span><span class="num">17 / 40</span></div>
+    <div class="slide-main">
+      <div class="eye">DVA • CPC 09 (R1)</div>
+      <h2>CMV, CPV e CSV</h2>
+      <p class="explanation">Na DVA, considere os custos de mercadorias, produtos e serviços vendidos referentes a itens adquiridos de terceiros.</p>
+      <div class="formula">CMV • CPV • CSV</div>
+      <p class="note"><span class="spark">✦</span> Gastos com pessoal próprio não pertencem aos insumos de terceiros.</p>
+    </div>
+    <div class="signature">CURSO DE CONTABILIDADE <strong>PROFESSOR MOREIRA</strong></div>
+  </div>
+</article>
+<article class="slide theme-teal" aria-label="Quadrinho 18 de 40: Materiais e serviços" data-section="Receitas e insumos" id="quadro-18">
+  <div class="art" aria-hidden="true"><span class="bubble one"></span><span class="bubble two"></span><span class="bubble three"></span></div>
+  <div class="slide-inner">
+    <div class="toprow"><span class="unit">Receitas e insumos</span><span class="num">18 / 40</span></div>
+    <div class="slide-main">
+      <div class="eye">DVA • CPC 09 (R1)</div>
+      <h2>Materiais e serviços</h2>
+      <p class="explanation">Materiais consumidos, energia elétrica e serviços contratados de terceiros são exemplos comuns de insumos.</p>
+      <div class="formula">MATERIAIS + ENERGIA + SERVIÇOS DE TERCEIROS</div>
+      <p class="note"><span class="spark">✦</span> O importante é a origem externa e o consumo no período.</p>
+    </div>
+    <div class="signature">CURSO DE CONTABILIDADE <strong>PROFESSOR MOREIRA</strong></div>
+  </div>
+</article>
+<article class="slide theme-teal" aria-label="Quadrinho 19 de 40: Tributos sobre compras" data-section="Receitas e insumos" id="quadro-19">
+  <div class="art" aria-hidden="true"><span class="bubble one"></span><span class="bubble two"></span><span class="bubble three"></span></div>
+  <div class="slide-inner">
+    <div class="toprow"><span class="unit">Receitas e insumos</span><span class="num">19 / 40</span></div>
+    <div class="slide-main">
+      <div class="eye">DVA • CPC 09 (R1)</div>
+      <h2>Tributos sobre compras</h2>
+      <p class="explanation">Nos insumos da DVA, consideram-se os tributos incluídos nas compras e nos itens consumidos, recuperáveis ou não, conforme CPC 09 (R1).</p>
+      <div class="formula">COM TRIBUTOS INCLUÍDOS NO CUSTO DA AQUISIÇÃO PARA A DVA</div>
+      <p class="note"><span class="spark">✦</span> Tratamento diferente daquele utilizado na DRE.</p>
+    </div>
+    <div class="signature">CURSO DE CONTABILIDADE <strong>PROFESSOR MOREIRA</strong></div>
+  </div>
+</article>
+<article class="slide theme-teal" aria-label="Quadrinho 20 de 40: Atenção aos aluguéis!" data-section="Receitas e insumos" id="quadro-20">
+  <div class="art" aria-hidden="true"><span class="bubble one"></span><span class="bubble two"></span><span class="bubble three"></span></div>
+  <div class="slide-inner">
+    <div class="toprow"><span class="unit">Receitas e insumos</span><span class="num">20 / 40</span></div>
+    <div class="slide-main">
+      <div class="eye">DVA • CPC 09 (R1)</div>
+      <h2>Atenção aos aluguéis!</h2>
+      <p class="explanation">Em regra, aluguéis pagos a terceiros são apresentados na distribuição da riqueza como remuneração de capitais de terceiros, observadas as regras do CPC 06.</p>
+      <div class="formula">ALUGUÉIS PAGOS ≠ INSUMOS DE TERCEIROS</div>
+      <p class="note"><span class="spark">✦</span> Pegadinha importante: não misturar com materiais e energia.</p>
+    </div>
+    <div class="signature">CURSO DE CONTABILIDADE <strong>PROFESSOR MOREIRA</strong></div>
+  </div>
+</article>
+<article class="slide theme-violet" aria-label="Quadrinho 21 de 40: Perda e recuperação de ativos" data-section="Apuração da riqueza" id="quadro-21">
+  <div class="art" aria-hidden="true"><span class="bubble one"></span><span class="bubble two"></span><span class="bubble three"></span></div>
+  <div class="slide-inner">
+    <div class="toprow"><span class="unit">Apuração da riqueza</span><span class="num">21 / 40</span></div>
+    <div class="slide-main">
+      <div class="eye">DVA • CPC 09 (R1)</div>
+      <h2>Perda e recuperação de ativos</h2>
+      <p class="explanation">Perdas por redução ao valor recuperável e suas reversões reconhecidas no resultado integram a formação da riqueza na rubrica apropriada.</p>
+      <div class="formula">PERDA (−) / RECUPERAÇÃO (+)</div>
+      <p class="note"><span class="spark">✦</span> Considere o efeito líquido e o sinal da operação.</p>
+    </div>
+    <div class="signature">CURSO DE CONTABILIDADE <strong>PROFESSOR MOREIRA</strong></div>
+  </div>
+</article>
+<article class="slide theme-violet" aria-label="Quadrinho 22 de 40: Valor adicionado bruto" data-section="Apuração da riqueza" id="quadro-22">
+  <div class="art" aria-hidden="true"><span class="bubble one"></span><span class="bubble two"></span><span class="bubble three"></span></div>
+  <div class="slide-inner">
+    <div class="toprow"><span class="unit">Apuração da riqueza</span><span class="num">22 / 40</span></div>
+    <div class="slide-main">
+      <div class="eye">DVA • CPC 09 (R1)</div>
+      <h2>Valor adicionado bruto</h2>
+      <p class="explanation">Subtraia os insumos adquiridos de terceiros das receitas.</p>
+      <div class="formula">VAB = RECEITAS − INSUMOS</div>
+      <p class="note"><span class="spark">✦</span> Exemplo: R$ 1.200 − R$ 500 = R$ 700.</p>
+    </div>
+    <div class="signature">CURSO DE CONTABILIDADE <strong>PROFESSOR MOREIRA</strong></div>
+  </div>
+</article>
+<article class="slide theme-violet" aria-label="Quadrinho 23 de 40: Depreciação, amortização e exaustão" data-section="Apuração da riqueza" id="quadro-23">
+  <div class="art" aria-hidden="true"><span class="bubble one"></span><span class="bubble two"></span><span class="bubble three"></span></div>
+  <div class="slide-inner">
+    <div class="toprow"><span class="unit">Apuração da riqueza</span><span class="num">23 / 40</span></div>
+    <div class="slide-main">
+      <div class="eye">DVA • CPC 09 (R1)</div>
+      <h2>Depreciação, amortização e exaustão</h2>
+      <p class="explanation">Essas parcelas são destacadas após o valor adicionado bruto, na linha de retenções.</p>
+      <div class="formula">RETENÇÕES: DEPRECIAÇÃO + AMORTIZAÇÃO + EXAUSTÃO</div>
+      <p class="note"><span class="spark">✦</span> Elas reduzem o valor adicionado bruto.</p>
+    </div>
+    <div class="signature">CURSO DE CONTABILIDADE <strong>PROFESSOR MOREIRA</strong></div>
+  </div>
+</article>
+<article class="slide theme-violet" aria-label="Quadrinho 24 de 40: Valor adicionado líquido" data-section="Apuração da riqueza" id="quadro-24">
+  <div class="art" aria-hidden="true"><span class="bubble one"></span><span class="bubble two"></span><span class="bubble three"></span></div>
+  <div class="slide-inner">
+    <div class="toprow"><span class="unit">Apuração da riqueza</span><span class="num">24 / 40</span></div>
+    <div class="slide-main">
+      <div class="eye">DVA • CPC 09 (R1)</div>
+      <h2>Valor adicionado líquido</h2>
+      <p class="explanation">É o valor adicionado bruto depois da dedução da depreciação, amortização e exaustão.</p>
+      <div class="formula">VAL = VAB − RETENÇÕES</div>
+      <p class="note"><span class="spark">✦</span> Exemplo: R$ 700 − R$ 100 = R$ 600.</p>
+    </div>
+    <div class="signature">CURSO DE CONTABILIDADE <strong>PROFESSOR MOREIRA</strong></div>
+  </div>
+</article>
+<article class="slide theme-violet" aria-label="Quadrinho 25 de 40: Riqueza recebida em transferência" data-section="Apuração da riqueza" id="quadro-25">
+  <div class="art" aria-hidden="true"><span class="bubble one"></span><span class="bubble two"></span><span class="bubble three"></span></div>
+  <div class="slide-inner">
+    <div class="toprow"><span class="unit">Apuração da riqueza</span><span class="num">25 / 40</span></div>
+    <div class="slide-main">
+      <div class="eye">DVA • CPC 09 (R1)</div>
+      <h2>Riqueza recebida em transferência</h2>
+      <p class="explanation">É a riqueza criada por terceiros e transferida à entidade. Não foi produzida diretamente por ela.</p>
+      <div class="formula">TRANSFERÊNCIA ≠ GERAÇÃO PRÓPRIA</div>
+      <p class="note"><span class="spark">✦</span> É apresentada de forma separada para evitar dupla contagem.</p>
+    </div>
+    <div class="signature">CURSO DE CONTABILIDADE <strong>PROFESSOR MOREIRA</strong></div>
+  </div>
+</article>
+<article class="slide theme-violet" aria-label="Quadrinho 26 de 40: Equivalência patrimonial" data-section="Apuração da riqueza" id="quadro-26">
+  <div class="art" aria-hidden="true"><span class="bubble one"></span><span class="bubble two"></span><span class="bubble three"></span></div>
+  <div class="slide-inner">
+    <div class="toprow"><span class="unit">Apuração da riqueza</span><span class="num">26 / 40</span></div>
+    <div class="slide-main">
+      <div class="eye">DVA • CPC 09 (R1)</div>
+      <h2>Equivalência patrimonial</h2>
+      <p class="explanation">O resultado de equivalência patrimonial integra o valor adicionado recebido em transferência.</p>
+      <div class="formula">MEP POSITIVO (+) / MEP NEGATIVO (−)</div>
+      <p class="note"><span class="spark">✦</span> Resultado negativo reduz o valor recebido em transferência.</p>
+    </div>
+    <div class="signature">CURSO DE CONTABILIDADE <strong>PROFESSOR MOREIRA</strong></div>
+  </div>
+</article>
+<article class="slide theme-violet" aria-label="Quadrinho 27 de 40: Receitas financeiras" data-section="Apuração da riqueza" id="quadro-27">
+  <div class="art" aria-hidden="true"><span class="bubble one"></span><span class="bubble two"></span><span class="bubble three"></span></div>
+  <div class="slide-inner">
+    <div class="toprow"><span class="unit">Apuração da riqueza</span><span class="num">27 / 40</span></div>
+    <div class="slide-main">
+      <div class="eye">DVA • CPC 09 (R1)</div>
+      <h2>Receitas financeiras</h2>
+      <p class="explanation">São valores recebidos em transferência, incluindo receitas financeiras e variações cambiais ativas reconhecidas no resultado, conforme a norma.</p>
+      <div class="formula">RECEITA FINANCEIRA → TRANSFERÊNCIA</div>
+      <p class="note"><span class="spark">✦</span> Não confunda com despesas financeiras, que aparecem na distribuição.</p>
+    </div>
+    <div class="signature">CURSO DE CONTABILIDADE <strong>PROFESSOR MOREIRA</strong></div>
+  </div>
+</article>
+<article class="slide theme-violet" aria-label="Quadrinho 28 de 40: Outras transferências" data-section="Apuração da riqueza" id="quadro-28">
+  <div class="art" aria-hidden="true"><span class="bubble one"></span><span class="bubble two"></span><span class="bubble three"></span></div>
+  <div class="slide-inner">
+    <div class="toprow"><span class="unit">Apuração da riqueza</span><span class="num">28 / 40</span></div>
+    <div class="slide-main">
+      <div class="eye">DVA • CPC 09 (R1)</div>
+      <h2>Outras transferências</h2>
+      <p class="explanation">Podem incluir dividendos de investimentos avaliados ao custo, royalties e aluguéis recebidos quando estes não constituem o objeto da entidade.</p>
+      <div class="formula">TRANSFERÊNCIA DE RIQUEZA CRIADA POR OUTROS</div>
+      <p class="note"><span class="spark">✦</span> Aluguel recebido pode ter classificação diferente conforme a atividade.</p>
+    </div>
+    <div class="signature">CURSO DE CONTABILIDADE <strong>PROFESSOR MOREIRA</strong></div>
+  </div>
+</article>
+<article class="slide theme-violet" aria-label="Quadrinho 29 de 40: Valor total a distribuir" data-section="Apuração da riqueza" id="quadro-29">
+  <div class="art" aria-hidden="true"><span class="bubble one"></span><span class="bubble two"></span><span class="bubble three"></span></div>
+  <div class="slide-inner">
+    <div class="toprow"><span class="unit">Apuração da riqueza</span><span class="num">29 / 40</span></div>
+    <div class="slide-main">
+      <div class="eye">DVA • CPC 09 (R1)</div>
+      <h2>Valor total a distribuir</h2>
+      <p class="explanation">Some o valor adicionado líquido produzido pela entidade ao valor recebido em transferência.</p>
+      <div class="formula">TOTAL A DISTRIBUIR = VAL + TRANSFERÊNCIAS</div>
+      <p class="note"><span class="spark">✦</span> Exemplo: R$ 600 + R$ 80 = R$ 680.</p>
+    </div>
+    <div class="signature">CURSO DE CONTABILIDADE <strong>PROFESSOR MOREIRA</strong></div>
+  </div>
+</article>
+<article class="slide theme-violet" aria-label="Quadrinho 30 de 40: Identidade obrigatória" data-section="Apuração da riqueza" id="quadro-30">
+  <div class="art" aria-hidden="true"><span class="bubble one"></span><span class="bubble two"></span><span class="bubble three"></span></div>
+  <div class="slide-inner">
+    <div class="toprow"><span class="unit">Apuração da riqueza</span><span class="num">30 / 40</span></div>
+    <div class="slide-main">
+      <div class="eye">DVA • CPC 09 (R1)</div>
+      <h2>Identidade obrigatória</h2>
+      <p class="explanation">A soma das quatro parcelas de distribuição deve corresponder exatamente ao valor adicionado total a distribuir.</p>
+      <div class="formula">TOTAL DISTRIBUÍDO = TOTAL A DISTRIBUIR</div>
+      <p class="note"><span class="spark">✦</span> Esta conferência resolve muitos exercícios.</p>
+    </div>
+    <div class="signature">CURSO DE CONTABILIDADE <strong>PROFESSOR MOREIRA</strong></div>
+  </div>
+</article>
+<article class="slide theme-navy" aria-label="Quadrinho 31 de 40: Quatro destinos da riqueza" data-section="Distribuição" id="quadro-31">
+  <div class="art" aria-hidden="true"><span class="bubble one"></span><span class="bubble two"></span><span class="bubble three"></span></div>
+  <div class="slide-inner">
+    <div class="toprow"><span class="unit">Distribuição</span><span class="num">31 / 40</span></div>
+    <div class="slide-main">
+      <div class="eye">DVA • CPC 09 (R1)</div>
+      <h2>Quatro destinos da riqueza</h2>
+      <p class="explanation">A segunda parte da DVA mostra a destinação a pessoal, governo, capitais de terceiros e capitais próprios.</p>
+      <div class="formula">PESSOAL • TRIBUTOS • TERCEIROS • PRÓPRIOS</div>
+      <p class="note"><span class="spark">✦</span> Guarde esses quatro grandes grupos.</p>
+    </div>
+    <div class="signature">CURSO DE CONTABILIDADE <strong>PROFESSOR MOREIRA</strong></div>
+  </div>
+</article>
+<article class="slide theme-navy" aria-label="Quadrinho 32 de 40: Pessoal: remuneração direta" data-section="Distribuição" id="quadro-32">
+  <div class="art" aria-hidden="true"><span class="bubble one"></span><span class="bubble two"></span><span class="bubble three"></span></div>
+  <div class="slide-inner">
+    <div class="toprow"><span class="unit">Distribuição</span><span class="num">32 / 40</span></div>
+    <div class="slide-main">
+      <div class="eye">DVA • CPC 09 (R1)</div>
+      <h2>Pessoal: remuneração direta</h2>
+      <p class="explanation">São salários, férias, 13º salário, comissões, horas extras e outras remunerações diretas previstas no CPC 09 (R1).</p>
+      <div class="formula">SALÁRIOS → PESSOAL</div>
+      <p class="note"><span class="spark">✦</span> O trabalho próprio contribui para gerar a riqueza.</p>
+    </div>
+    <div class="signature">CURSO DE CONTABILIDADE <strong>PROFESSOR MOREIRA</strong></div>
+  </div>
+</article>
+<article class="slide theme-navy" aria-label="Quadrinho 33 de 40: Benefícios e FGTS" data-section="Distribuição" id="quadro-33">
+  <div class="art" aria-hidden="true"><span class="bubble one"></span><span class="bubble two"></span><span class="bubble three"></span></div>
+  <div class="slide-inner">
+    <div class="toprow"><span class="unit">Distribuição</span><span class="num">33 / 40</span></div>
+    <div class="slide-main">
+      <div class="eye">DVA • CPC 09 (R1)</div>
+      <h2>Benefícios e FGTS</h2>
+      <p class="explanation">Benefícios como alimentação, transporte e assistência médica, além do FGTS, integram a distribuição destinada ao pessoal.</p>
+      <div class="formula">BENEFÍCIOS + FGTS → PESSOAL</div>
+      <p class="note"><span class="spark">✦</span> A DVA não trata esses valores como insumos comprados de terceiros.</p>
+    </div>
+    <div class="signature">CURSO DE CONTABILIDADE <strong>PROFESSOR MOREIRA</strong></div>
+  </div>
+</article>
+<article class="slide theme-navy" aria-label="Quadrinho 34 de 40: Governo: tributos federais" data-section="Distribuição" id="quadro-34">
+  <div class="art" aria-hidden="true"><span class="bubble one"></span><span class="bubble two"></span><span class="bubble three"></span></div>
+  <div class="slide-inner">
+    <div class="toprow"><span class="unit">Distribuição</span><span class="num">34 / 40</span></div>
+    <div class="slide-main">
+      <div class="eye">DVA • CPC 09 (R1)</div>
+      <h2>Governo: tributos federais</h2>
+      <p class="explanation">IRPJ, CSLL, PIS e COFINS, entre outros valores federais devidos, integram o grupo de impostos, taxas e contribuições.</p>
+      <div class="formula">TRIBUTOS FEDERAIS → GOVERNO</div>
+      <p class="note"><span class="spark">✦</span> Inclui encargos patronais nos termos da norma.</p>
+    </div>
+    <div class="signature">CURSO DE CONTABILIDADE <strong>PROFESSOR MOREIRA</strong></div>
+  </div>
+</article>
+<article class="slide theme-navy" aria-label="Quadrinho 35 de 40: Tributos estaduais e municipais" data-section="Distribuição" id="quadro-35">
+  <div class="art" aria-hidden="true"><span class="bubble one"></span><span class="bubble two"></span><span class="bubble three"></span></div>
+  <div class="slide-inner">
+    <div class="toprow"><span class="unit">Distribuição</span><span class="num">35 / 40</span></div>
+    <div class="slide-main">
+      <div class="eye">DVA • CPC 09 (R1)</div>
+      <h2>Tributos estaduais e municipais</h2>
+      <p class="explanation">ICMS e IPVA são exemplos de tributos estaduais; ISS e IPTU, de municipais.</p>
+      <div class="formula">ESTADUAIS + MUNICIPAIS → GOVERNO</div>
+      <p class="note"><span class="spark">✦</span> Em tributos compensáveis, a DVA considera o valor devido após a compensação correspondente.</p>
+    </div>
+    <div class="signature">CURSO DE CONTABILIDADE <strong>PROFESSOR MOREIRA</strong></div>
+  </div>
+</article>
+<article class="slide theme-navy" aria-label="Quadrinho 36 de 40: Capitais de terceiros: juros" data-section="Distribuição" id="quadro-36">
+  <div class="art" aria-hidden="true"><span class="bubble one"></span><span class="bubble two"></span><span class="bubble three"></span></div>
+  <div class="slide-inner">
+    <div class="toprow"><span class="unit">Distribuição</span><span class="num">36 / 40</span></div>
+    <div class="slide-main">
+      <div class="eye">DVA • CPC 09 (R1)</div>
+      <h2>Capitais de terceiros: juros</h2>
+      <p class="explanation">Despesas financeiras de empréstimos, financiamentos e certas variações cambiais passivas remuneram os financiadores externos.</p>
+      <div class="formula">JUROS PAGOS → CAPITAIS DE TERCEIROS</div>
+      <p class="note"><span class="spark">✦</span> As receitas financeiras, por outro lado, são recebidas em transferência.</p>
+    </div>
+    <div class="signature">CURSO DE CONTABILIDADE <strong>PROFESSOR MOREIRA</strong></div>
+  </div>
+</article>
+<article class="slide theme-navy" aria-label="Quadrinho 37 de 40: Capitais de terceiros: aluguéis" data-section="Distribuição" id="quadro-37">
+  <div class="art" aria-hidden="true"><span class="bubble one"></span><span class="bubble two"></span><span class="bubble three"></span></div>
+  <div class="slide-inner">
+    <div class="toprow"><span class="unit">Distribuição</span><span class="num">37 / 40</span></div>
+    <div class="slide-main">
+      <div class="eye">DVA • CPC 09 (R1)</div>
+      <h2>Capitais de terceiros: aluguéis</h2>
+      <p class="explanation">Aluguéis pagos a terceiros, quando enquadrados na rubrica do CPC 09 (R1), e outras remunerações como certos royalties compõem esse grupo.</p>
+      <div class="formula">ALUGUÉIS PAGOS → CAPITAIS DE TERCEIROS</div>
+      <p class="note"><span class="spark">✦</span> A classificação observa o tratamento de arrendamentos do CPC 06 (R2).</p>
+    </div>
+    <div class="signature">CURSO DE CONTABILIDADE <strong>PROFESSOR MOREIRA</strong></div>
+  </div>
+</article>
+<article class="slide theme-navy" aria-label="Quadrinho 38 de 40: Capitais próprios: JCP e dividendos" data-section="Distribuição" id="quadro-38">
+  <div class="art" aria-hidden="true"><span class="bubble one"></span><span class="bubble two"></span><span class="bubble three"></span></div>
+  <div class="slide-inner">
+    <div class="toprow"><span class="unit">Distribuição</span><span class="num">38 / 40</span></div>
+    <div class="slide-main">
+      <div class="eye">DVA • CPC 09 (R1)</div>
+      <h2>Capitais próprios: JCP e dividendos</h2>
+      <p class="explanation">Juros sobre capital próprio e dividendos relativos ao resultado do próprio exercício pertencem à remuneração de capitais próprios.</p>
+      <div class="formula">JCP + DIVIDENDOS → CAPITAIS PRÓPRIOS</div>
+      <p class="note"><span class="spark">✦</span> Dividendos de lucros de exercícios anteriores não entram de novo.</p>
+    </div>
+    <div class="signature">CURSO DE CONTABILIDADE <strong>PROFESSOR MOREIRA</strong></div>
+  </div>
+</article>
+<article class="slide theme-navy" aria-label="Quadrinho 39 de 40: Lucros retidos e prejuízo" data-section="Distribuição" id="quadro-39">
+  <div class="art" aria-hidden="true"><span class="bubble one"></span><span class="bubble two"></span><span class="bubble three"></span></div>
+  <div class="slide-inner">
+    <div class="toprow"><span class="unit">Distribuição</span><span class="num">39 / 40</span></div>
+    <div class="slide-main">
+      <div class="eye">DVA • CPC 09 (R1)</div>
+      <h2>Lucros retidos e prejuízo</h2>
+      <p class="explanation">Lucros do exercício destinados às reservas integram capitais próprios; se houver prejuízo do exercício, ele é apresentado com sinal negativo.</p>
+      <div class="formula">LUCROS RETIDOS (+) / PREJUÍZO (−)</div>
+      <p class="note"><span class="spark">✦</span> O total da remuneração de capitais próprios equivale ao resultado líquido do exercício, com as adequações do modelo.</p>
+    </div>
+    <div class="signature">CURSO DE CONTABILIDADE <strong>PROFESSOR MOREIRA</strong></div>
+  </div>
+</article>
+<article class="slide theme-navy" aria-label="Quadrinho 40 de 40: Exercício-resumo da DVA" data-section="Distribuição" id="quadro-40">
+  <div class="art" aria-hidden="true"><span class="bubble one"></span><span class="bubble two"></span><span class="bubble three"></span></div>
+  <div class="slide-inner">
+    <div class="toprow"><span class="unit">Distribuição</span><span class="num">40 / 40</span></div>
+    <div class="slide-main">
+      <div class="eye">DVA • CPC 09 (R1)</div>
+      <h2>Exercício-resumo da DVA</h2>
+      <p class="explanation">Receitas: R$ 1.000; insumos: R$ 400; retenções: R$ 100; transferências: R$ 100. Distribuição: pessoal 200, tributos 150, terceiros 100 e próprios 150.</p>
+      <div class="formula">1.000 − 400 − 100 + 100 = R$ 600</div>
+      <p class="note"><span class="spark">✦</span> 200 + 150 + 100 + 150 = R$ 600. CONFERIU!</p>
+    </div>
+    <div class="signature">CURSO DE CONTABILIDADE <strong>PROFESSOR MOREIRA</strong></div>
+  </div>
+</article>
+</div></div>
+<div class="controls"><div class="progress" role="progressbar" aria-label="Progresso da leitura" aria-valuemin="1" aria-valuemax="40" aria-valuenow="1" id="bar"><div id="fill" class="progress-fill"></div></div>
+<div class="controlrow"><button id="prev" class="nav" type="button" aria-label="Quadrinho anterior">❮</button><div id="counter" class="pagecounter" aria-live="polite">Quadrinho 1 de 40</div><button id="next" class="nav" type="button" aria-label="Próximo quadrinho">❯</button></div>
+<p class="hint">☝️ Deslize para o lado com o dedo ou use as setas.</p>
+<div class="bottomrow"><select id="jump" class="jump" aria-label="Pular para um bloco"><option value="0">Bloco 1 • Fundamentos (1–10)</option><option value="10">Bloco 2 • Receitas e insumos (11–20)</option><option value="20">Bloco 3 • Apuração da riqueza (21–30)</option><option value="30">Bloco 4 • Distribuição (31–40)</option></select><button class="restart" id="restart" type="button">↺ Reiniciar</button></div></div>
+<div class="source">Material didático de estudo • Referência: <a href="https://www.cpc.org.br/Arquivos/Documentos/632_CPC%2009%20R1.pdf" target="_blank" rel="noopener noreferrer">CPC 09 (R1) — Demonstração do Valor Adicionado</a>.</div>
+</main>
+<script>
+(function(){'use strict';
+const track=document.getElementById('track'),prev=document.getElementById('prev'),next=document.getElementById('next'),counter=document.getElementById('counter'),fill=document.getElementById('fill'),bar=document.getElementById('bar'),jump=document.getElementById('jump'),restart=document.getElementById('restart');
+const slides=Array.from(track.children);let active=0;let ticking=false;
+function go(i,behavior='smooth'){const n=Math.max(0,Math.min(slides.length-1,i));track.scrollTo({left:n*track.clientWidth,behavior});update(n);}
+function update(i){active=i;counter.textContent=`Quadrinho ${active+1} de ${slides.length}`;fill.style.width=((active+1)/slides.length*100)+'%';bar.setAttribute('aria-valuenow',String(active+1));prev.disabled=(active===0);next.disabled=(active===slides.length-1);jump.value=String(Math.floor(active/10)*10);}
+prev.addEventListener('click',()=>go(active-1));next.addEventListener('click',()=>go(active+1));jump.addEventListener('change',()=>go(Number(jump.value)));restart.addEventListener('click',()=>go(0));
+track.addEventListener('scroll',()=>{if(ticking)return;ticking=true;requestAnimationFrame(()=>{const current=Math.round(track.scrollLeft/Math.max(track.clientWidth,1));update(Math.max(0,Math.min(slides.length-1,current)));ticking=false;});},{passive:true});
+track.addEventListener('keydown',(e)=>{if(e.key==='ArrowRight'){e.preventDefault();go(active+1)}else if(e.key==='ArrowLeft'){e.preventDefault();go(active-1)}else if(e.key==='Home'){e.preventDefault();go(0)}else if(e.key==='End'){e.preventDefault();go(slides.length-1)}});
+window.addEventListener('resize',()=>go(active,'instant'));
+update(0);
+})();
+</script>
+</body></html>
